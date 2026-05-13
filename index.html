@@ -1,0 +1,575 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>YOUR_NAME - Backend Portfolio</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'on-surface': '#e5e2e1',
+              'on-background': '#e5e2e1',
+              'surface-container-high': '#2a2a2a',
+              'surface-variant': '#353534',
+              'primary-container': '#4af626',
+              surface: '#131313',
+              'surface-container-low': '#1c1b1b',
+              'surface-dim': '#131313',
+              'primary-fixed-dim': '#34e507',
+              primary: '#d4ffc1',
+              outline: '#86957d',
+              'on-surface-variant': '#bbccb0',
+              'on-primary-container': '#136c00',
+              background: '#131313',
+              'outline-variant': '#3c4b36',
+              'surface-container': '#201f1f',
+              'surface-container-lowest': '#0e0e0e',
+              'surface-bright': '#393939',
+              'primary-fixed': '#79ff59',
+            },
+            borderRadius: { DEFAULT: '0.25rem' },
+            spacing: {
+              gutter: '16px',
+              'container-max': '1200px',
+              'margin-desktop': '48px',
+              'margin-mobile': '16px',
+            },
+            fontFamily: {
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #131313;
+        color: #e5e2e1;
+        -webkit-font-smoothing: antialiased;
+        font-family: 'JetBrains Mono', monospace;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-surface min-h-screen flex flex-col selection:bg-primary-container selection:text-surface"
+  >
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-background border-b border-outline">
+      <div
+        class="flex justify-between items-center w-full px-4 md:px-12 py-4 max-w-screen-xl mx-auto"
+      >
+        <div class="text-lg font-bold text-primary tracking-tighter">
+          ROOT@PORTFOLIO:~$
+        </div>
+        <nav
+          class="hidden md:flex gap-4 items-center text-xs tracking-widest uppercase"
+        >
+          <a
+            class="text-on-surface-variant hover:text-primary px-2 py-1 hover:bg-surface-variant transition-colors"
+            href="#about"
+            >/about</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary px-2 py-1 hover:bg-surface-variant transition-colors"
+            href="#projects"
+            >/projects</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary px-2 py-1 hover:bg-surface-variant transition-colors"
+            href="#skills"
+            >/skills</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary px-2 py-1 hover:bg-surface-variant transition-colors"
+            href="#contact"
+            >/contact</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main
+      class="flex-grow w-full max-w-screen-xl mx-auto px-4 md:px-12 py-12 flex flex-col gap-16 md:gap-24"
+    >
+      <!-- Hero -->
+      <section
+        class="border border-outline bg-surface p-6 md:p-12 relative overflow-hidden hover:border-primary-container transition-colors"
+        id="hero"
+      >
+        <div class="absolute top-0 left-0 w-full h-1 bg-surface-variant">
+          <div class="h-full bg-primary-container w-1/4"></div>
+        </div>
+        <div
+          class="text-2xl md:text-4xl font-bold text-primary mb-4 tracking-tight"
+        >
+          &gt; Ibrahim Ahmed Naguib
+          <span
+            class="animate-pulse inline-block w-4 h-8 bg-primary-container align-middle ml-2"
+          ></span>
+        </div>
+        <div
+          class="text-lg font-semibold text-on-surface mb-6 border-l-2 border-surface-variant pl-4"
+        >
+          Backend Developer · Building real things while learning
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="flex flex-col gap-4" id="about">
+        <h2
+          class="text-lg font-semibold text-on-surface border-b border-outline pb-2 flex items-center gap-2"
+        >
+          <span
+            class="material-symbols-outlined text-primary-container"
+            style="font-variation-settings: 'FILL' 0; font-size: 20px"
+            >terminal</span
+          >
+          /dev/about
+        </h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-[40px_1fr] border border-outline bg-surface"
+        >
+          <div
+            class="hidden md:flex flex-col items-center py-4 border-r border-outline bg-surface-container-low text-on-surface-variant text-sm select-none gap-1"
+          >
+            <span>1</span><span>2</span>
+          </div>
+          <div
+            class="p-6 text-sm text-on-surface leading-relaxed flex flex-col gap-4"
+          >
+            <p>
+              Self-taught backend developer, currently looking for my first
+              professional opportunity.
+            </p>
+            <p>
+              I build real things, write clean code, and figure out what I don't
+              know along the way.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="flex flex-col gap-6" id="projects">
+        <h2
+          class="text-lg font-semibold text-on-surface border-b border-outline pb-2 flex items-center gap-2"
+        >
+          <span
+            class="material-symbols-outlined text-primary-container"
+            style="font-variation-settings: 'FILL' 0; font-size: 20px"
+            >folder</span
+          >
+          /home/projects
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Project 1: Chat App -->
+          <article
+            class="border border-outline bg-surface flex flex-col hover:border-primary-container transition-colors"
+          >
+            <div
+              class="border-b border-outline p-3 bg-surface-container-low text-xs tracking-widest uppercase text-primary flex justify-between items-center"
+            >
+              <span>./CHAT_APP</span>
+              <span
+                class="material-symbols-outlined text-on-surface-variant"
+                style="font-size: 16px"
+                >chat</span
+              >
+            </div>
+            <div
+              class="p-4 flex-grow text-sm text-on-surface flex flex-col gap-4"
+            >
+              <p>
+                Real-time messaging app with live user presence, JWT
+                authentication, password reset, and MVC architecture. Secured
+                with rate limiting, input sanitization, and custom error
+                handling middleware.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span
+                  class="border border-surface-variant px-2 py-1 text-on-surface-variant text-xs"
+                  >[Node.js]</span
+                >
+                <span
+                  class="border border-surface-variant px-2 py-1 text-on-surface-variant text-xs"
+                  >[Express.js]</span
+                >
+                <span
+                  class="border border-surface-variant px-2 py-1 text-on-surface-variant text-xs"
+                  >[Socket.IO]</span
+                >
+                <span
+                  class="border border-surface-variant px-2 py-1 text-on-surface-variant text-xs"
+                  >[MongoDB]</span
+                >
+              </div>
+            </div>
+            <div
+              class="border-t border-outline flex text-xs tracking-widest uppercase"
+            >
+              <a
+                class="flex-1 py-3 text-center border-r border-outline hover:bg-surface-variant hover:text-primary transition-colors"
+                href="https://github.com/Ibrahim-Naguib/chat-app-api"
+                >[GITHUB]</a
+              >
+              <a
+                href="#"
+                class="flex-1 py-3 text-center border-r border-outline hover:bg-surface-variant hover:text-primary transition-colors"
+                >[NO DEMO]</a
+              >
+            </div>
+          </article>
+
+          <!-- Project 2: E-Commerce API -->
+          <article
+            class="border border-outline bg-surface flex flex-col hover:border-primary-container transition-colors"
+          >
+            <div
+              class="border-b border-outline p-3 bg-surface-container-low text-xs tracking-widest uppercase text-primary flex justify-between items-center"
+            >
+              <span>./ECOMMERCE_API</span>
+              <span
+                class="material-symbols-outlined text-on-surface-variant"
+                style="font-size: 16px"
+                >shopping_cart</span
+              >
+            </div>
+            <div
+              class="p-4 flex-grow text-sm text-on-surface flex flex-col gap-4"
+            >
+              <p>
+                Full-featured REST API with role-based auth,
+                product/order/cart/review systems, Stripe payments, and
+                transactional emails. Built with TypeScript and strict Zod
+                validation throughout.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-auto">
+                <span
+                  class="border border-surface-variant px-2 py-1 text-on-surface-variant text-xs"
+                  >[TypeScript]</span
+                >
+                <span
+                  class="border border-surface-variant px-2 py-1 text-on-surface-variant text-xs"
+                  >[Node.js]</span
+                >
+                <span
+                  class="border border-surface-variant px-2 py-1 text-on-surface-variant text-xs"
+                  >[Express.js]</span
+                >
+                <span
+                  class="border border-surface-variant px-2 py-1 text-on-surface-variant text-xs"
+                  >[MongoDB]</span
+                >
+                <span
+                  class="border border-surface-variant px-2 py-1 text-on-surface-variant text-xs"
+                  >[Stripe]</span
+                >
+                <span
+                  class="border border-surface-variant px-2 py-1 text-on-surface-variant text-xs"
+                  >[Zod]</span
+                >
+              </div>
+            </div>
+            <div
+              class="border-t border-outline flex text-xs tracking-widest uppercase"
+            >
+              <a
+                class="flex-1 py-3 text-center border-r border-outline hover:bg-surface-variant hover:text-primary transition-colors"
+                href="https://github.com/Ibrahim-Naguib/E-Commerce-API"
+                >[GITHUB]</a
+              >
+              <a
+                href="https://e-commerce-ui-production.up.railway.app/"
+                class="flex-1 py-3 text-center border-r border-outline hover:bg-surface-variant hover:text-primary transition-colors"
+                >[Live DEMO]</a
+              >
+            </div>
+          </article>
+        </div>
+
+        <!-- Add project note -->
+        <p
+          class="text-xs text-on-surface-variant border border-surface-variant bg-surface-container-low px-4 py-3"
+        >
+          <span class="text-primary-container">#</span> More projects coming
+          soon. All source code available on GitHub.
+        </p>
+      </section>
+
+      <!-- Skills -->
+      <section class="flex flex-col gap-4" id="skills">
+        <h2
+          class="text-lg font-semibold text-on-surface border-b border-outline pb-2 flex items-center gap-2"
+        >
+          <span
+            class="material-symbols-outlined text-primary-container"
+            style="font-variation-settings: 'FILL' 0; font-size: 20px"
+            >build</span
+          >
+          /usr/bin/skills
+        </h2>
+        <div
+          class="bg-surface-container-low border border-outline p-6 flex flex-col gap-6"
+        >
+          <div class="flex flex-col gap-2">
+            <div
+              class="text-xs text-on-surface-variant tracking-widest uppercase mb-1"
+            >
+              <span class="text-primary-container">//</span> Languages
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # JavaScript (ES6+)
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # TypeScript
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Python (basic)
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # C (basic)
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <div
+              class="text-xs text-on-surface-variant tracking-widest uppercase mb-1"
+            >
+              <span class="text-primary-container">//</span> Backend
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Node.js
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Express.js
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # REST APIs
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Socket.IO
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Flask (basic)
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <div
+              class="text-xs text-on-surface-variant tracking-widest uppercase mb-1"
+            >
+              <span class="text-primary-container">//</span> Databases
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # MongoDB
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Mongoose
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # PostgreSQL (basic)
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <div
+              class="text-xs text-on-surface-variant tracking-widest uppercase mb-1"
+            >
+              <span class="text-primary-container">//</span> Auth & Security
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # JWT
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Refresh Tokens
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # RBAC
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Cookies & Sessions
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Zod Validation
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # bcrypt
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <div
+              class="text-xs text-on-surface-variant tracking-widest uppercase mb-1"
+            >
+              <span class="text-primary-container">//</span> Tools
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Git
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Linux CLI
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Postman
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Swagger
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Docker (basic)
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Stripe
+              </div>
+              <div
+                class="border border-surface-variant bg-surface px-3 py-2 text-sm text-on-surface hover:border-primary-container transition-colors"
+              >
+                # Cloudinary
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="flex flex-col gap-4 mb-12" id="contact">
+        <h2
+          class="text-lg font-semibold text-on-surface border-b border-outline pb-2 flex items-center gap-2"
+        >
+          <span
+            class="material-symbols-outlined text-primary-container"
+            style="font-variation-settings: 'FILL' 0; font-size: 20px"
+            >mail</span
+          >
+          /etc/contact
+        </h2>
+        <div
+          class="border border-outline bg-surface p-6 text-sm flex flex-col gap-4"
+        >
+          <div class="text-on-surface-variant flex items-center gap-2">
+            <span class="text-primary-container">$</span> cat contact.txt
+          </div>
+          <div
+            class="pl-4 border-l-2 border-surface-variant flex flex-col gap-2"
+          >
+            <p class="text-on-surface">
+              EMAIL:
+              <a
+                class="text-primary hover:underline"
+                href="mailto:ibrahim.nag3@gmail.com"
+                >ibrahim.nag3@gmail.com</a
+              >
+            </p>
+            <p class="text-on-surface">
+              GITHUB:
+              <a
+                class="text-primary hover:underline"
+                href="https://github.com/Ibrahim-Naguib"
+                >github.com/Ibrahim-Naguib</a
+              >
+            </p>
+            <p class="text-on-surface">
+              LINKEDIN:
+              <a
+                class="text-primary hover:underline"
+                href="https://www.linkedin.com/in/ibrahim-naguib1/"
+                >linkedin.com/in/ibrahim-naguib1</a
+              >
+            </p>
+            <p class="text-on-surface">
+              STATUS:
+              <span class="text-primary-container"
+                >Open to remote opportunities.</span
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-outline mt-auto">
+      <div
+        class="flex justify-center items-center w-full px-4 md:px-12 py-8 max-w-screen-xl mx-auto"
+      >
+        <div
+          class="text-xs tracking-widest uppercase text-on-surface text-center"
+        >
+          [SYSTEM_READY] © 2026 IBRAHIM NAGUIB. NO_RIGHTS_RESERVED.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
